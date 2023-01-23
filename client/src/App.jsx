@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import Signup from "./components/Signup";
-import Header from "./components/maincomp/Header";
 import Main from "./components/maincomp/Main";
 import Background from "./components/maincomp/Background";
+import ChangePassword from "./components/ChangePassword";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Main />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/updateuser" element={<ChangePassword />} />
       </Routes>
     </div>
   );

@@ -10,6 +10,7 @@ const ContactUs = () => {
   const { registered, contactRef } = useContext(CourseContext);
   const handleSubmit = (e) => {
     e.preventDefault();
+    e.target.reset()
     if(registered){
       navigate("/");
       console.log(data);

@@ -41,7 +41,22 @@ router.get("/", async (req, res) => {
 // === Delete user === //
 router.delete("/:id", async (req, res) => {
   const id = req.params.id;
-  let query = `DELETE FROM user WHERE user_id = '${userID}'`;
+  let query = `DELETE FROM users WHERE user_id = '${userID}'`;
+  try {
+    const { rows } = await db.query(query);
+    res.status(200).send(rows);
+  } catch (err) {
+    res.status(400).send(err.message);
+  }
+});
+// === Update password === //
+router.put("/", async (req, res) => {
+  const body = req.body;
+  const { id, password } = body;
+  const hashedPassword = await bcrypt.hash(password, 10);
+  console.log(id)
+  console.log(hashedPassword)
+  let query = `UPDATE users SET password = '${hashedPassword}' WHERE user_id = ${id} `;
   try {
     const { rows } = await db.query(query);
     res.status(200).send(rows);

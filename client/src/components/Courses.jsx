@@ -5,7 +5,11 @@ import { CourseContext } from "./../CourseContext";
 import Swal from "sweetalert2";
 
 const Courses = () => {
-  const { userID, refresh, setRefresh, myProfile, courseRef, handleClick2 } = useContext(CourseContext);
+  const {
+    userID,
+    myProfile,
+    courseRef,
+  } = useContext(CourseContext);
   const [course, setCourse] = useState(0);
   const takeCourse = async (num) => {
     try {
@@ -22,7 +26,7 @@ const Courses = () => {
         title: "Course added succesfully",
         showConfirmButton: false,
         timer: 1800,
-        background: 'black'
+        background: "black",
       });
     } catch (err) {
       console.log(err.message);

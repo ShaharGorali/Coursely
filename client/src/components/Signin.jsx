@@ -11,6 +11,7 @@ const Signin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log(data);
       const result = await axios.post("http://localhost:4000/register", data);
       localStorage.setItem("token", result.data);
       myProfile();

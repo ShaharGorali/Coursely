@@ -450,6 +450,22 @@
   background-color: black;
   color: rgb(42, 87, 40);
 }
+.profileBtns{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 25px;
+}
+#forgotBtn{
+  text-decoration: none;
+  height: 50%;
+}
+#forgotBtn1{
+  text-decoration: none;
+  height: 50%;
+}
 /* #cHead{
   position: relative;
 } */

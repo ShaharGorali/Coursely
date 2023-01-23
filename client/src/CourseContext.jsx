@@ -41,6 +41,7 @@ function CourseProvider(props) {
         const user_id = decoded.user_id;
         setName(username);
         setUserID(user_id);
+        console.log(user_id);
         const result = await axios.get(
           `http://localhost:4000/courses/${user_id}`
         );

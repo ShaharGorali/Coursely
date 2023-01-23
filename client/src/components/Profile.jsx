@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { CourseContext } from "./../CourseContext";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { NavLink } from "react-router-dom";
 
 const Profile = () => {
   const { name, myCourses, myProfile, profileRef, handleClick1 } =
@@ -132,9 +133,14 @@ const Profile = () => {
             );
           })}
         </div>
-        <button onClick={handleClick1} className="nextBtn">
-          Review our Courses
-        </button>
+        <div className="profileBtns">
+          <NavLink id="forgotBtn" className="nextBtn" to={"/updateuser"}>
+            I want a new password
+          </NavLink>
+          <button id="forgotBtn1" onClick={handleClick1} className="nextBtn">
+            Review our Courses
+          </button>
+        </div>
       </div>
     </div>
   );
